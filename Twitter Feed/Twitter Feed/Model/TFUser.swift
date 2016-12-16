@@ -12,11 +12,13 @@ class TFUser: TFBaseModel {
     var ID: String!
     var screenName: String!
     var name: String!
+    var imageURL = ""
     
     required init(withDictionary dictionary: NSDictionary) {
         super.init(withDictionary: dictionary)
         ID = dictionary["id_str"] as! String
         screenName = dictionary["screen_name"] as? String ?? ""
         name = dictionary["name"] as? String ?? ""
+        imageURL = dictionary["profile_image_url_https"] as? String ?? ""
     }
 }

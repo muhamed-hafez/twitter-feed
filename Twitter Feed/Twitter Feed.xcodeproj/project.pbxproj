@@ -20,6 +20,7 @@
 		E2ED3D3F1E0443E5007A829A /* TFHashtag.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2ED3D3E1E0443E5007A829A /* TFHashtag.swift */; };
 		E2ED3D411E04452E007A829A /* TFUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2ED3D401E04452E007A829A /* TFUser.swift */; };
 		E2ED3D431E0445AC007A829A /* TFUserMention.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2ED3D421E0445AC007A829A /* TFUserMention.swift */; };
+		E2ED3D451E045A9E007A829A /* TFTweetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2ED3D441E045A9E007A829A /* TFTweetTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,8 @@
 		E2ED3D3E1E0443E5007A829A /* TFHashtag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TFHashtag.swift; sourceTree = "<group>"; };
 		E2ED3D401E04452E007A829A /* TFUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TFUser.swift; sourceTree = "<group>"; };
 		E2ED3D421E0445AC007A829A /* TFUserMention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TFUserMention.swift; sourceTree = "<group>"; };
+		E2ED3D441E045A9E007A829A /* TFTweetTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TFTweetTableViewCell.swift; sourceTree = "<group>"; };
+		E2ED3D4A1E045BCC007A829A /* Twitter Feed-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Twitter Feed-Bridging-Header.h"; sourceTree = "<group>"; };
 		FD79672DF26CC261446A4E24 /* Pods-Twitter Feed.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Twitter Feed.release.xcconfig"; path = "Pods/Target Support Files/Pods-Twitter Feed/Pods-Twitter Feed.release.xcconfig"; sourceTree = "<group>"; };
 		FEAC56B42568AEA4F47ACD84 /* Pods_Twitter_Feed.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Twitter_Feed.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -123,6 +126,7 @@
 				E2ED3D381E040D24007A829A /* Model */,
 				E2ED3D391E040D24007A829A /* View */,
 				E2E7675C1E04073600A53D8E /* AppDelegate.swift */,
+				E2ED3D4A1E045BCC007A829A /* Twitter Feed-Bridging-Header.h */,
 				E2E767601E04073600A53D8E /* Main.storyboard */,
 				E2E767631E04073600A53D8E /* Assets.xcassets */,
 				E2E767651E04073600A53D8E /* LaunchScreen.storyboard */,
@@ -163,6 +167,7 @@
 		E2ED3D391E040D24007A829A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				E2ED3D441E045A9E007A829A /* TFTweetTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -223,6 +228,7 @@
 				TargetAttributes = {
 					E2E767581E04073600A53D8E = {
 						CreatedOnToolsVersion = 8.1;
+						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 					};
 					E2E7676C1E04073700A53D8E = {
@@ -372,6 +378,7 @@
 				E2ED3D3B1E041FBD007A829A /* TFBaseModel.swift in Sources */,
 				E2E7675F1E04073600A53D8E /* ViewController.swift in Sources */,
 				E2ED3D411E04452E007A829A /* TFUser.swift in Sources */,
+				E2ED3D451E045A9E007A829A /* TFTweetTableViewCell.swift in Sources */,
 				E2ED3D3F1E0443E5007A829A /* TFHashtag.swift in Sources */,
 				E2E7675D1E04073600A53D8E /* AppDelegate.swift in Sources */,
 				E2ED3D431E0445AC007A829A /* TFUserMention.swift in Sources */,
@@ -513,10 +520,13 @@
 			baseConfigurationReference = 6A7F24504D12C8A39C7E86DD /* Pods-Twitter Feed.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "Twitter Feed/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.test.Twitter-Feed";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Twitter Feed/Twitter Feed-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -526,10 +536,12 @@
 			baseConfigurationReference = FD79672DF26CC261446A4E24 /* Pods-Twitter Feed.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "Twitter Feed/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.test.Twitter-Feed";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Twitter Feed/Twitter Feed-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;

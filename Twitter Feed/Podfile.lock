@@ -1,12 +1,20 @@
 PODS:
   - Alamofire (4.2.0)
+  - SDWebImage (3.8.2):
+    - SDWebImage/Core (= 3.8.2)
+  - SDWebImage/Core (3.8.2)
+  - TTTAttributedLabel (2.0.0)
 
 DEPENDENCIES:
   - Alamofire (~> 4.0)
+  - SDWebImage (~> 3.8)
+  - TTTAttributedLabel
 
 SPEC CHECKSUMS:
   Alamofire: aa2e09d871c9160ac53c90e83c68064a94e3dfbe
+  SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
+  TTTAttributedLabel: 8cffe8e127e4e82ff3af1e5386d4cd0ad000b656
 
-PODFILE CHECKSUM: 90b75849b9fc581e75af17eb42682cc2e37594a3
+PODFILE CHECKSUM: 773a829c8b94738df5ccad2d6bc4f462c1ec7c89
 
 COCOAPODS: 1.1.1

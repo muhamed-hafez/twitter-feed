@@ -24,8 +24,9 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="130" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="FSf-Dz-tXu">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="eci-LV-M2d">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="tweetCell" id="eci-LV-M2d" customClass="TFTweetTableViewCell" customModule="Twitter_Feed" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="1" width="320" height="130"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eci-LV-M2d" id="Rrj-OJ-BL3">
@@ -33,32 +34,32 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wb7-Wg-jRJ">
-                                                    <rect key="frame" x="10" y="10" width="48" height="48"/>
+                                                    <rect key="frame" x="10" y="10" width="56" height="56"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="48" id="CFY-De-XA3"/>
-                                                        <constraint firstAttribute="height" constant="48" id="j0R-SS-gIf"/>
+                                                        <constraint firstAttribute="width" constant="56" id="CFY-De-XA3"/>
+                                                        <constraint firstAttribute="height" constant="56" id="j0R-SS-gIf"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Test" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i1N-xt-0SD">
-                                                    <rect key="frame" x="66" y="10" width="30" height="17.5"/>
-                                                    <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
+                                                    <rect key="frame" x="74" y="10" width="27" height="16"/>
+                                                    <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="13.5"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@test" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8AV-5W-wjC">
-                                                    <rect key="frame" x="104" y="11.5" width="34.5" height="15"/>
-                                                    <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="13"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="500" text="@test" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8AV-5W-wjC">
+                                                    <rect key="frame" x="105" y="11.5" width="30.5" height="14"/>
+                                                    <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="11.5"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3m" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pHP-pm-yNf">
-                                                    <rect key="frame" x="293.5" y="11.5" width="18.5" height="15"/>
-                                                    <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="13"/>
+                                                    <rect key="frame" x="296" y="12" width="16" height="13.5"/>
+                                                    <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="11.5"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="100" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uKF-1c-BUk">
-                                                    <rect key="frame" x="66" y="41" width="246" height="80.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="100" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uKF-1c-BUk" customClass="TTTAttributedLabel">
+                                                    <rect key="frame" x="74" y="40.5" width="238" height="81"/>
                                                     <string key="text">What the teacher says: You may now begin the test.
 
 What I hear: May the odds be forever in your favor.</string>
@@ -74,14 +75,21 @@ What I hear: May the odds be forever in your favor.</string>
                                                 <constraint firstItem="pHP-pm-yNf" firstAttribute="centerY" secondItem="i1N-xt-0SD" secondAttribute="centerY" id="AXk-Os-0Bv"/>
                                                 <constraint firstItem="i1N-xt-0SD" firstAttribute="leading" secondItem="wb7-Wg-jRJ" secondAttribute="trailing" constant="8" id="Cu9-p4-XTV"/>
                                                 <constraint firstItem="i1N-xt-0SD" firstAttribute="top" secondItem="Rrj-OJ-BL3" secondAttribute="top" constant="10" id="DRM-Vx-cdw"/>
+                                                <constraint firstItem="pHP-pm-yNf" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8AV-5W-wjC" secondAttribute="trailing" constant="8" id="XNb-k0-iBU"/>
                                                 <constraint firstAttribute="trailing" secondItem="pHP-pm-yNf" secondAttribute="trailing" constant="8" id="XNj-kT-w8N"/>
                                                 <constraint firstItem="wb7-Wg-jRJ" firstAttribute="leading" secondItem="Rrj-OJ-BL3" secondAttribute="leading" constant="10" id="cmw-I3-04z"/>
-                                                <constraint firstItem="8AV-5W-wjC" firstAttribute="leading" secondItem="i1N-xt-0SD" secondAttribute="trailing" constant="8" id="dCZ-o2-aN6"/>
+                                                <constraint firstItem="8AV-5W-wjC" firstAttribute="leading" secondItem="i1N-xt-0SD" secondAttribute="trailing" constant="4" id="dCZ-o2-aN6"/>
                                                 <constraint firstItem="wb7-Wg-jRJ" firstAttribute="top" secondItem="Rrj-OJ-BL3" secondAttribute="top" constant="10" id="jYn-CP-42M"/>
                                                 <constraint firstItem="uKF-1c-BUk" firstAttribute="top" relation="greaterThanOrEqual" secondItem="i1N-xt-0SD" secondAttribute="bottom" constant="8" id="nj5-fn-q9a"/>
                                                 <constraint firstAttribute="bottom" secondItem="uKF-1c-BUk" secondAttribute="bottom" constant="8" id="qTQ-Yf-WSi"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="nameLabel" destination="i1N-xt-0SD" id="DVf-TZ-HeD"/>
+                                            <outlet property="photo" destination="wb7-Wg-jRJ" id="BcC-2D-sB4"/>
+                                            <outlet property="screenNameLabel" destination="8AV-5W-wjC" id="DeS-Uc-UUT"/>
+                                            <outlet property="tweetTextLabel" destination="uKF-1c-BUk" id="9UW-ZC-Hd8"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -95,9 +103,19 @@ What I hear: May the odds be forever in your favor.</string>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
-                    <navigationItem key="navigationItem" id="LDd-Kj-fIK"/>
+                    <navigationItem key="navigationItem" id="LDd-Kj-fIK">
+                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="D1I-jF-dtQ"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tweetTableView" destination="FSf-Dz-tXu" id="5tM-12-EjB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <searchBar contentMode="redraw" id="SC1-nf-hQv">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                    <textInputTraits key="textInputTraits"/>
+                </searchBar>
             </objects>
             <point key="canvasLocation" x="1125" y="785.91549295774644"/>
         </scene>
