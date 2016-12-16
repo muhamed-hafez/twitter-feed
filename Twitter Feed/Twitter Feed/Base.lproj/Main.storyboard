@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -47,7 +46,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@test" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8AV-5W-wjC">
-                                                    <rect key="frame" x="104" y="10" width="34.5" height="15"/>
+                                                    <rect key="frame" x="104" y="11.5" width="34.5" height="15"/>
                                                     <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="13"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -71,7 +70,7 @@ What I hear: May the odds be forever in your favor.</string>
                                             <constraints>
                                                 <constraint firstItem="uKF-1c-BUk" firstAttribute="leading" secondItem="wb7-Wg-jRJ" secondAttribute="trailing" constant="8" id="0TN-Gr-KdN"/>
                                                 <constraint firstAttribute="trailing" secondItem="uKF-1c-BUk" secondAttribute="trailing" constant="8" id="0pQ-tx-DT9"/>
-                                                <constraint firstItem="8AV-5W-wjC" firstAttribute="top" secondItem="Rrj-OJ-BL3" secondAttribute="topMargin" constant="2" id="84d-Uw-PjQ"/>
+                                                <constraint firstItem="8AV-5W-wjC" firstAttribute="centerY" secondItem="i1N-xt-0SD" secondAttribute="centerY" id="5xa-SB-Kk3"/>
                                                 <constraint firstItem="pHP-pm-yNf" firstAttribute="centerY" secondItem="i1N-xt-0SD" secondAttribute="centerY" id="AXk-Os-0Bv"/>
                                                 <constraint firstItem="i1N-xt-0SD" firstAttribute="leading" secondItem="wb7-Wg-jRJ" secondAttribute="trailing" constant="8" id="Cu9-p4-XTV"/>
                                                 <constraint firstItem="i1N-xt-0SD" firstAttribute="top" secondItem="Rrj-OJ-BL3" secondAttribute="top" constant="10" id="DRM-Vx-cdw"/>

@@ -15,6 +15,11 @@
 		E2E767641E04073600A53D8E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2E767631E04073600A53D8E /* Assets.xcassets */; };
 		E2E767671E04073600A53D8E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2E767651E04073600A53D8E /* LaunchScreen.storyboard */; };
 		E2E767721E04073700A53D8E /* Twitter_FeedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E767711E04073700A53D8E /* Twitter_FeedTests.swift */; };
+		E2ED3D3B1E041FBD007A829A /* TFBaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2ED3D3A1E041FBD007A829A /* TFBaseModel.swift */; };
+		E2ED3D3D1E042062007A829A /* TFTweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2ED3D3C1E042062007A829A /* TFTweet.swift */; };
+		E2ED3D3F1E0443E5007A829A /* TFHashtag.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2ED3D3E1E0443E5007A829A /* TFHashtag.swift */; };
+		E2ED3D411E04452E007A829A /* TFUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2ED3D401E04452E007A829A /* TFUser.swift */; };
+		E2ED3D431E0445AC007A829A /* TFUserMention.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2ED3D421E0445AC007A829A /* TFUserMention.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +47,11 @@
 		E2E7676D1E04073700A53D8E /* Twitter FeedTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Twitter FeedTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2E767711E04073700A53D8E /* Twitter_FeedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Twitter_FeedTests.swift; sourceTree = "<group>"; };
 		E2E767731E04073700A53D8E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E2ED3D3A1E041FBD007A829A /* TFBaseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TFBaseModel.swift; sourceTree = "<group>"; };
+		E2ED3D3C1E042062007A829A /* TFTweet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TFTweet.swift; sourceTree = "<group>"; };
+		E2ED3D3E1E0443E5007A829A /* TFHashtag.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TFHashtag.swift; sourceTree = "<group>"; };
+		E2ED3D401E04452E007A829A /* TFUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TFUser.swift; sourceTree = "<group>"; };
+		E2ED3D421E0445AC007A829A /* TFUserMention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TFUserMention.swift; sourceTree = "<group>"; };
 		FD79672DF26CC261446A4E24 /* Pods-Twitter Feed.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Twitter Feed.release.xcconfig"; path = "Pods/Target Support Files/Pods-Twitter Feed/Pods-Twitter Feed.release.xcconfig"; sourceTree = "<group>"; };
 		FEAC56B42568AEA4F47ACD84 /* Pods_Twitter_Feed.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Twitter_Feed.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -141,6 +151,11 @@
 		E2ED3D381E040D24007A829A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E2ED3D3A1E041FBD007A829A /* TFBaseModel.swift */,
+				E2ED3D3C1E042062007A829A /* TFTweet.swift */,
+				E2ED3D3E1E0443E5007A829A /* TFHashtag.swift */,
+				E2ED3D401E04452E007A829A /* TFUser.swift */,
+				E2ED3D421E0445AC007A829A /* TFUserMention.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -354,8 +369,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2ED3D3B1E041FBD007A829A /* TFBaseModel.swift in Sources */,
 				E2E7675F1E04073600A53D8E /* ViewController.swift in Sources */,
+				E2ED3D411E04452E007A829A /* TFUser.swift in Sources */,
+				E2ED3D3F1E0443E5007A829A /* TFHashtag.swift in Sources */,
 				E2E7675D1E04073600A53D8E /* AppDelegate.swift in Sources */,
+				E2ED3D431E0445AC007A829A /* TFUserMention.swift in Sources */,
+				E2ED3D3D1E042062007A829A /* TFTweet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
