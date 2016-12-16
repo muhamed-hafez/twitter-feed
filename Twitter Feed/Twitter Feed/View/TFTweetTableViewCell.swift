@@ -30,7 +30,18 @@ class TFTweetTableViewCell: UITableViewCell {
         photo.sd_setImage(with: URL(string: tweet.user.imageURL)!)
         nameLabel.text = tweet.user.name
         screenNameLabel.text = "@" + tweet.user.screenName
-        tweetTextLabel.text = tweet.text
+        
+        let attributedTweetText = NSMutableAttributedString(string: tweet.text)
+
+        for hashtag in tweet.hashtags! {
+            attributedTweetText.addAttribute(NSForegroundColorAttributeName, value: UIColor.blue, range: NSRange(location: hashtag.from, length: hashtag.to - hashtag.from))
+        }
+        
+        for mention in tweet.userMentions! {
+            attributedTweetText.addAttribute(NSForegroundColorAttributeName, value: UIColor.blue, range: NSRange(location: mention.from, length: mention.to - mention.from))
+        }
+
+        tweetTextLabel.attributedText = attributedTweetText
     }
     
 }
