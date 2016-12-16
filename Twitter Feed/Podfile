@@ -6,7 +6,8 @@ target 'Twitter Feed' do
   use_frameworks!
 
   # Pods for Twitter Feed
-
+  pod 'Alamofire', '~> 4.0'
+  
   target 'Twitter FeedTests' do
     inherit! :search_paths
     # Pods for testing
