@@ -13,6 +13,12 @@ class TFUserMention: TFBaseModel {
     var from = 0
     var to = 0
     
+    var range: NSRange {
+        get {
+            return NSRange(location: from, length: to - from)
+        }
+    }
+
     required init(withDictionary dictionary: NSDictionary) {
         super.init(withDictionary: dictionary)
         user = TFUser(withDictionary: dictionary)

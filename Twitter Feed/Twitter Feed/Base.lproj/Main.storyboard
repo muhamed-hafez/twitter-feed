@@ -8,6 +8,11 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="FontAwesome.otf">
+            <string>FontAwesome</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -21,16 +26,16 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="130" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="FSf-Dz-tXu">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="150" sectionHeaderHeight="1" sectionFooterHeight="1" translatesAutoresizingMaskIntoConstraints="NO" id="FSf-Dz-tXu">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="tweetCell" id="eci-LV-M2d" customClass="TFTweetTableViewCell" customModule="Twitter_Feed" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="1" width="320" height="130"/>
+                                        <rect key="frame" x="0.0" y="1" width="320" height="150"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eci-LV-M2d" id="Rrj-OJ-BL3">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="130"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="149"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wb7-Wg-jRJ">
@@ -47,24 +52,36 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="500" text="@test" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8AV-5W-wjC">
-                                                    <rect key="frame" x="105" y="12" width="31" height="14"/>
+                                                    <rect key="frame" x="105" y="11" width="31" height="14"/>
                                                     <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="11.5"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3m" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pHP-pm-yNf">
-                                                    <rect key="frame" x="296" y="12" width="16" height="14"/>
+                                                    <rect key="frame" x="296" y="11" width="16" height="14"/>
                                                     <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="11.5"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="100" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uKF-1c-BUk" customClass="TTTAttributedLabel">
-                                                    <rect key="frame" x="74" y="41" width="238" height="81"/>
+                                                    <rect key="frame" x="74" y="40.5" width="238" height="81"/>
                                                     <string key="text">What the teacher says: You may now begin the test.
 
 What I hear: May the odds be forever in your favor.</string>
                                                     <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
                                                     <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="100" text="Retweet Count" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lj0-Lu-mc0">
+                                                    <rect key="frame" x="74" y="129.5" width="76" height="12"/>
+                                                    <fontDescription key="fontDescription" name="FontAwesome" family="FontAwesome" pointSize="11.5"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="100" text="Favorite Count" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gsp-Mi-zYr">
+                                                    <rect key="frame" x="160" y="129.5" width="76" height="12"/>
+                                                    <fontDescription key="fontDescription" name="FontAwesome" family="FontAwesome" pointSize="11.5"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -75,18 +92,24 @@ What I hear: May the odds be forever in your favor.</string>
                                                 <constraint firstItem="pHP-pm-yNf" firstAttribute="centerY" secondItem="i1N-xt-0SD" secondAttribute="centerY" id="AXk-Os-0Bv"/>
                                                 <constraint firstItem="i1N-xt-0SD" firstAttribute="leading" secondItem="wb7-Wg-jRJ" secondAttribute="trailing" constant="8" id="Cu9-p4-XTV"/>
                                                 <constraint firstItem="i1N-xt-0SD" firstAttribute="top" secondItem="Rrj-OJ-BL3" secondAttribute="top" constant="10" id="DRM-Vx-cdw"/>
+                                                <constraint firstItem="lj0-Lu-mc0" firstAttribute="top" secondItem="uKF-1c-BUk" secondAttribute="bottom" constant="8" id="Tkb-oM-eu9"/>
                                                 <constraint firstItem="pHP-pm-yNf" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8AV-5W-wjC" secondAttribute="trailing" constant="8" id="XNb-k0-iBU"/>
                                                 <constraint firstAttribute="trailing" secondItem="pHP-pm-yNf" secondAttribute="trailing" constant="8" id="XNj-kT-w8N"/>
+                                                <constraint firstItem="Gsp-Mi-zYr" firstAttribute="leading" secondItem="lj0-Lu-mc0" secondAttribute="trailing" constant="10" id="a12-JX-zqk"/>
+                                                <constraint firstItem="Gsp-Mi-zYr" firstAttribute="top" secondItem="uKF-1c-BUk" secondAttribute="bottom" constant="8" id="aoB-JU-A6J"/>
                                                 <constraint firstItem="wb7-Wg-jRJ" firstAttribute="leading" secondItem="Rrj-OJ-BL3" secondAttribute="leading" constant="10" id="cmw-I3-04z"/>
                                                 <constraint firstItem="8AV-5W-wjC" firstAttribute="leading" secondItem="i1N-xt-0SD" secondAttribute="trailing" constant="4" id="dCZ-o2-aN6"/>
+                                                <constraint firstAttribute="bottom" secondItem="lj0-Lu-mc0" secondAttribute="bottom" constant="8" id="faS-sV-0RR"/>
                                                 <constraint firstItem="wb7-Wg-jRJ" firstAttribute="top" secondItem="Rrj-OJ-BL3" secondAttribute="top" constant="10" id="jYn-CP-42M"/>
                                                 <constraint firstItem="uKF-1c-BUk" firstAttribute="top" relation="greaterThanOrEqual" secondItem="i1N-xt-0SD" secondAttribute="bottom" constant="8" id="nj5-fn-q9a"/>
-                                                <constraint firstAttribute="bottom" secondItem="uKF-1c-BUk" secondAttribute="bottom" constant="8" id="qTQ-Yf-WSi"/>
+                                                <constraint firstItem="lj0-Lu-mc0" firstAttribute="leading" secondItem="wb7-Wg-jRJ" secondAttribute="trailing" constant="8" id="qjn-Hq-GCL"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="favoriteCountLabel" destination="Gsp-Mi-zYr" id="CK5-oW-KmN"/>
                                             <outlet property="nameLabel" destination="i1N-xt-0SD" id="DVf-TZ-HeD"/>
                                             <outlet property="photo" destination="wb7-Wg-jRJ" id="BcC-2D-sB4"/>
+                                            <outlet property="retweetCountLabel" destination="lj0-Lu-mc0" id="hyJ-y8-hlN"/>
                                             <outlet property="screenNameLabel" destination="8AV-5W-wjC" id="DeS-Uc-UUT"/>
                                             <outlet property="tweetTextLabel" destination="uKF-1c-BUk" id="ZGb-dw-PAC"/>
                                         </connections>
@@ -123,7 +146,7 @@ What I hear: May the odds be forever in your favor.</string>
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Rwy-JM-qtU" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="5zs-yF-IRI">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="5zs-yF-IRI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.25098039215686274" green="0.59999999999999998" blue="1" alpha="1" colorSpace="calibratedRGB"/>

@@ -19,6 +19,8 @@ class TFTweetTableViewCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var screenNameLabel: UILabel!
     @IBOutlet weak var tweetTextLabel: TTTAttributedLabel!
+    @IBOutlet weak var retweetCountLabel: UILabel!
+    @IBOutlet weak var favoriteCountLabel: UILabel!
     
     weak var tapDelegate: TFTweetCellDelegate?
     
@@ -44,14 +46,17 @@ class TFTweetTableViewCell: UITableViewCell {
         let attributedTweetText = NSMutableAttributedString(string: tweet.text)
 
         for hashtag in tweet.hashtags! {
-            attributedTweetText.addAttribute(NSForegroundColorAttributeName, value: UIColor.blue, range: NSRange(location: hashtag.from, length: hashtag.to - hashtag.from))
+            attributedTweetText.addAttribute(NSForegroundColorAttributeName, value: UIColor.blue, range: hashtag.range)
         }
         
         for mention in tweet.userMentions! {
-            attributedTweetText.addAttribute(NSForegroundColorAttributeName, value: UIColor.blue, range: NSRange(location: mention.from, length: mention.to - mention.from))
+            attributedTweetText.addAttribute(NSForegroundColorAttributeName, value: UIColor.blue, range: mention.range)
         }
 
         tweetTextLabel.attributedText = attributedTweetText
+        
+        retweetCountLabel.text = "\u{f079} \(tweet.retweetCount)"
+        favoriteCountLabel.text = "\u{f004} \(tweet.favoriteCount)"
     }
     
     func handleTap(_ tapRecognizer: UITapGestureRecognizer) {
