@@ -21,6 +21,7 @@
 		E2ED3D411E04452E007A829A /* TFUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2ED3D401E04452E007A829A /* TFUser.swift */; };
 		E2ED3D431E0445AC007A829A /* TFUserMention.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2ED3D421E0445AC007A829A /* TFUserMention.swift */; };
 		E2ED3D451E045A9E007A829A /* TFTweetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2ED3D441E045A9E007A829A /* TFTweetTableViewCell.swift */; };
+		E2F10AD81E05637100EBDAC5 /* TFQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F10AD71E05637100EBDAC5 /* TFQuery.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		E2ED3D421E0445AC007A829A /* TFUserMention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TFUserMention.swift; sourceTree = "<group>"; };
 		E2ED3D441E045A9E007A829A /* TFTweetTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TFTweetTableViewCell.swift; sourceTree = "<group>"; };
 		E2ED3D4A1E045BCC007A829A /* Twitter Feed-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Twitter Feed-Bridging-Header.h"; sourceTree = "<group>"; };
+		E2F10AD71E05637100EBDAC5 /* TFQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TFQuery.swift; sourceTree = "<group>"; };
 		FD79672DF26CC261446A4E24 /* Pods-Twitter Feed.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Twitter Feed.release.xcconfig"; path = "Pods/Target Support Files/Pods-Twitter Feed/Pods-Twitter Feed.release.xcconfig"; sourceTree = "<group>"; };
 		FEAC56B42568AEA4F47ACD84 /* Pods_Twitter_Feed.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Twitter_Feed.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -160,6 +162,7 @@
 				E2ED3D3E1E0443E5007A829A /* TFHashtag.swift */,
 				E2ED3D401E04452E007A829A /* TFUser.swift */,
 				E2ED3D421E0445AC007A829A /* TFUserMention.swift */,
+				E2F10AD71E05637100EBDAC5 /* TFQuery.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -379,6 +382,7 @@
 				E2E7675F1E04073600A53D8E /* ViewController.swift in Sources */,
 				E2ED3D411E04452E007A829A /* TFUser.swift in Sources */,
 				E2ED3D451E045A9E007A829A /* TFTweetTableViewCell.swift in Sources */,
+				E2F10AD81E05637100EBDAC5 /* TFQuery.swift in Sources */,
 				E2ED3D3F1E0443E5007A829A /* TFHashtag.swift in Sources */,
 				E2E7675D1E04073600A53D8E /* AppDelegate.swift in Sources */,
 				E2ED3D431E0445AC007A829A /* TFUserMention.swift in Sources */,
@@ -442,6 +446,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -491,6 +496,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -519,6 +525,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6A7F24504D12C8A39C7E86DD /* Pods-Twitter Feed.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "Twitter Feed/Info.plist";
@@ -535,6 +542,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FD79672DF26CC261446A4E24 /* Pods-Twitter Feed.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "Twitter Feed/Info.plist";

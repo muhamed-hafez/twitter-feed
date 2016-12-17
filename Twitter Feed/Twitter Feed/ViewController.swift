@@ -9,13 +9,14 @@
 import UIKit
 import Foundation
 import Alamofire
+import SVPullToRefresh
 
 class ViewController: UIViewController, UITableViewDataSource, UISearchBarDelegate, TFTweetCellDelegate {
 
     @IBOutlet weak var tweetTableView: UITableView!
     var tweets = [TFTweet]()
     var refreshTimer:Timer?
-    var lastQuery: String = "#startup"
+    var lastQuery = TFQuery(query: "#startup")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +31,15 @@ class ViewController: UIViewController, UITableViewDataSource, UISearchBarDelega
         self.tweetTableView.rowHeight = UITableViewAutomaticDimension
         self.tweetTableView.estimatedRowHeight = 130.0
         self.tweetTableView.tableFooterView = UIView()
+        self.tweetTableView.addPullToRefresh {
+            self.lastQuery.maxID = ""
+            self.searchForTweets()
+        }
+        
+        self.tweetTableView.addInfiniteScrolling { 
+            self.lastQuery.sinceID = ""
+            self.searchForTweets()
+        }
         
         let searchBar = UISearchBar()
         searchBar.sizeToFit()
@@ -51,10 +61,11 @@ class ViewController: UIViewController, UITableViewDataSource, UISearchBarDelega
     
     func searchForTweets() {
         let searchBar = navigationItem.titleView as? UISearchBar
-        searchBar?.text = lastQuery
+        searchBar?.text = lastQuery.textQuery
         
         let header = ["Authorization": "Bearer AAAAAAAAAAAAAAAAAAAAAGypyQAAAAAAsVjOEduC%2BTXBM6imanaJSM8PSaI%3DRd7E9j1akp3SX7thVr2s3kkh5PwKxCAgYCpjelTeSxgQFXrDDz"]
-        let urlString = "https://api.twitter.com/1.1/search/tweets.json?q=" + lastQuery.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlHostAllowed)!
+
+        let urlString = "https://api.twitter.com/1.1/search/tweets.json?" + lastQuery.constructParameters()
 
         Alamofire.request(urlString, headers: header)
             .validate()
@@ -62,7 +73,21 @@ class ViewController: UIViewController, UITableViewDataSource, UISearchBarDelega
                 [weak self] response in
                 guard let dictionary = response.result.value as? [String: AnyObject] else { return }
                 guard let statuses = dictionary["statuses"] as? Array<NSDictionary> else { return }
-                self?.tweets = TFTweet.instancesFromArray(array: statuses) as! [TFTweet]
+                var newTweets = TFTweet.instancesFromArray(array: statuses) as! [TFTweet]
+                
+                if self?.lastQuery.sinceID.isEmpty == false {
+                    self?.tweets.insert(contentsOf: newTweets, at: 0)
+                    self?.tweetTableView.pullToRefreshView.stopAnimating()
+                }
+                else {
+                    if newTweets.first?.ID == self?.lastQuery.maxID {
+                        newTweets.removeFirst()
+                    }
+                    self?.tweets.append(contentsOf: newTweets)
+                    self?.tweetTableView.infiniteScrollingView.stopAnimating()
+                }
+                self?.lastQuery.sinceID = self?.tweets.first?.ID ?? ""
+                self?.lastQuery.maxID = self?.tweets.last?.ID ?? ""
                 self?.tweetTableView.reloadData()
         }
     }
@@ -73,6 +98,8 @@ class ViewController: UIViewController, UITableViewDataSource, UISearchBarDelega
         if interval > 0 {
             self.refreshTimer = Timer.scheduledTimer(timeInterval: TimeInterval(interval), target: self, selector: #selector(searchForTweets), userInfo: nil, repeats: true)
         }
+        
+        self.tweetTableView.showsPullToRefresh = (interval == 0)
     }
     
     @IBAction func changeRefreshRate(_ sender: UIBarButtonItem) {
@@ -131,7 +158,7 @@ class ViewController: UIViewController, UITableViewDataSource, UISearchBarDelega
         // Though, search button won't be enabled unless there is a search query
         // it is good practice to check
         if searchBar.text?.isEmpty == false {
-            lastQuery = searchBar.text!
+            lastQuery.textQuery = searchBar.text!
             searchForTweets()
         }
     }
@@ -145,7 +172,7 @@ class ViewController: UIViewController, UITableViewDataSource, UISearchBarDelega
         }.first
         
         if let hashtag = clickedHashtag {
-            lastQuery = "#" + hashtag.text
+            lastQuery.textQuery = "#" + hashtag.text
             searchForTweets()
         }
     }
