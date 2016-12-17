@@ -9,12 +9,18 @@
 import UIKit
 import TTTAttributedLabel
 
+protocol TFTweetCellDelegate: class {
+    func didTap(onCell: UITableViewCell, atIndex: Int)
+}
+
 class TFTweetTableViewCell: UITableViewCell {
 
     @IBOutlet weak var photo: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var screenNameLabel: UILabel!
     @IBOutlet weak var tweetTextLabel: TTTAttributedLabel!
+    
+    weak var tapDelegate: TFTweetCellDelegate?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -24,6 +30,10 @@ class TFTweetTableViewCell: UITableViewCell {
         photo.clipsToBounds = true
     
         tweetTextLabel.enabledTextCheckingTypes = NSTextCheckingAllTypes
+
+        let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
+        tweetTextLabel.isUserInteractionEnabled = true
+        tweetTextLabel.addGestureRecognizer(tapRecognizer)
     }
 
     func bind(tweet: TFTweet) {
@@ -44,4 +54,21 @@ class TFTweetTableViewCell: UITableViewCell {
         tweetTextLabel.attributedText = attributedTweetText
     }
     
+    func handleTap(_ tapRecognizer: UITapGestureRecognizer) {
+        let touchPoint = tapRecognizer.location(in: tweetTextLabel)
+        
+        let textStorage = NSTextStorage(attributedString: tweetTextLabel.attributedText)
+        let layoutManager = NSLayoutManager()
+        textStorage.addLayoutManager(layoutManager)
+        let textContainer = NSTextContainer(size: tweetTextLabel.frame.size)
+        textContainer.lineFragmentPadding = 0
+        textContainer.maximumNumberOfLines = tweetTextLabel.numberOfLines
+        textContainer.lineBreakMode = tweetTextLabel.lineBreakMode
+        layoutManager.addTextContainer(textContainer)
+        
+        let index = layoutManager.characterIndex(for: touchPoint, in: textContainer, fractionOfDistanceBetweenInsertionPoints: nil)
+        
+        self.tapDelegate?.didTap(onCell: self, atIndex: index)
+    }
+ 
 }

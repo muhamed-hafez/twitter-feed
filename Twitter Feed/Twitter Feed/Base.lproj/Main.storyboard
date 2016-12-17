@@ -30,7 +30,7 @@
                                         <rect key="frame" x="0.0" y="1" width="320" height="130"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eci-LV-M2d" id="Rrj-OJ-BL3">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="129"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="130"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wb7-Wg-jRJ">
@@ -88,7 +88,7 @@ What I hear: May the odds be forever in your favor.</string>
                                             <outlet property="nameLabel" destination="i1N-xt-0SD" id="DVf-TZ-HeD"/>
                                             <outlet property="photo" destination="wb7-Wg-jRJ" id="BcC-2D-sB4"/>
                                             <outlet property="screenNameLabel" destination="8AV-5W-wjC" id="DeS-Uc-UUT"/>
-                                            <outlet property="tweetTextLabel" destination="uKF-1c-BUk" id="9UW-ZC-Hd8"/>
+                                            <outlet property="tweetTextLabel" destination="uKF-1c-BUk" id="ZGb-dw-PAC"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -104,18 +104,17 @@ What I hear: May the odds be forever in your favor.</string>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" id="LDd-Kj-fIK">
-                        <barButtonItem key="rightBarButtonItem" systemItem="edit" id="D1I-jF-dtQ"/>
+                        <barButtonItem key="rightBarButtonItem" image="ic_tap_timer_normal" id="D1I-jF-dtQ">
+                            <connections>
+                                <action selector="changeRefreshRate:" destination="BYZ-38-t0r" id="pPw-qV-at1"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tweetTableView" destination="FSf-Dz-tXu" id="5tM-12-EjB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-                <searchBar contentMode="redraw" id="SC1-nf-hQv">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                    <textInputTraits key="textInputTraits"/>
-                </searchBar>
             </objects>
             <point key="canvasLocation" x="1125" y="785.91549295774644"/>
         </scene>
@@ -139,4 +138,7 @@ What I hear: May the odds be forever in your favor.</string>
             <point key="canvasLocation" x="-86.25" y="785.91549295774644"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="ic_tap_timer_normal" width="15" height="17"/>
+    </resources>
 </document>
