@@ -159,6 +159,9 @@ class ViewController: UIViewController, UITableViewDataSource, UISearchBarDelega
         // it is good practice to check
         if searchBar.text?.isEmpty == false {
             lastQuery.textQuery = searchBar.text!
+            lastQuery.sinceID = ""
+            lastQuery.maxID = ""
+            tweets.removeAll()
             searchForTweets()
         }
     }
