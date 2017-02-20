@@ -9,7 +9,12 @@
 import Foundation
 
 class TFQuery {
-    var textQuery = ""
+    var textQuery = "" {
+        didSet {
+            sinceID = ""
+            maxID = ""
+        }
+    }
     var sinceID = ""
     var maxID = ""
     
